@@ -46,12 +46,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: binaries
-          path: .
+          path: ./artifacts
 
-      - name: Create GitHub Release
-        id: create_release
+      - name: Create GitHub Release and upload binaries
         uses: softprops/action-gh-release@v2
         with:
-          files: ./fake-antivirus, ./fake-cleaner
+          files: ./artifacts/fake-antivirus, ./artifacts/fake-cleaner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
