@@ -1,0 +1,44 @@
+{
+  "policies": {
+    "BlockAboutConfig": true,
+    "DisablePrivateBrowsing": true,
+    "DisableDeveloperTools": true,
+    "ExtensionSettings": {
+      "*": {
+        "installation_mode": "blocked",
+	"blocked_install_message": "Interdiction de rajouter des extentions, voir avec Sydher si besoin."
+      },
+      "uBlock0@raymondhill.net": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
+      },
+      "jid1-KKzOGWgsW3Ao4Q@jetpack": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/i-dont-care-about-cookies/latest.xpi"
+      },
+      "{446900e4-71c2-419f-a6a7-df9c091e268b}": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi"
+      },
+      "langpack-fr@firefox.mozilla.org": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/langpack-fr/latest.xpi"
+      },
+      "fr@dictionaries.addons.mozilla.org": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/fr-dictionary/latest.xpi"
+      }
+    },
+    "Preferences": {
+    	"browser.search.defaultenginename": {
+      	"Value": "DuckDuckGo",
+        "Status": "locked"
+      }
+    },
+    "SearchEngines": {
+    	"Default": "DuckDuckGo",
+    	"PreventInstalls": true,
+    	"Remove": ["Bing", "eBay", "Google", "Qwant"]
+    }
+  }
+}
