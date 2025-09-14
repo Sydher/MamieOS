@@ -41,26 +41,45 @@ Web plus agréable et meilleur respect vie privée.
 La saisie de mot de passe est assez compliqué pour ma grand-mère. Avoir une extention qui se souviens et saisie automatiquement ses mots de passes facilitera énormément son utilisation.  
 De plus **tout le monde** devrait utiliser un gestionnaire de mot de passe !
 
-TODO Liste de sites sur connu (indicateur vert ou rouge) ⇒ extenstion chrome custom ou celle de duckduckgo ?
-
 ### Configuration avancées
 
-TODO blocage config
+```
 {
   "policies": {
-    "BlockAboutConfig": true,
+    "DisableAboutPreferences": true,
+    "DisableAboutConfig": true,
+    "ExtensionSettings": {
+      "*": {
+        "installation_mode": "blocked"
+      }
+    },
+    "DisablePrivateBrowsing": true,
+    "DisablePocket": true,
+    "DisableTelemetry": true,
+    "DisableDeveloperTools": true,
     "Preferences": {
-      "browser.search.update": {
+      "xpinstall.signatures.required": {
+        "Value": true,
+        "Status": "locked"
+      },
+      "app.shield.optoutstudies.enabled": {
+        "Value": false,
+        "Status": "locked"
+      },
+      "datareporting.healthreport.uploadEnabled": {
+        "Value": false,
+        "Status": "locked"
+      },
+      "toolkit.telemetry.enabled": {
         "Value": false,
         "Status": "locked"
       }
     }
   }
 }
+```
 
-/usr/lib/firefox/distribution ou /etc/firefox/policies
-
-TODO ajouter blocage de tout les params + blocage ajout extentions / recherche / ...
+dans /usr/lib/firefox/distribution/policies.json
 
 ## La suite
 
