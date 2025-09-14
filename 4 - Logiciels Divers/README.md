@@ -9,9 +9,10 @@ J'ai donc développé 2 faux logiciels pour simuler ce comportement. Ils ne font
 
 Ce sont des scripts Python tout simple.
 
-TODO screen
+![Antivirus](./image-antivirus_start.png "Antivirus")
+![Antivirus](./image-antivirus_stop.png "Antivirus")
 
-Voir [ici](./fake-utils/README.md) si vous voulez les utiliser également.
+Voir [le code](./fake-utils/README.md) et [les releases](#TODO) si vous voulez les utiliser également.
 
 ## Contrôle à distance
 

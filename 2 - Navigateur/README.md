@@ -11,10 +11,26 @@ J'ai choisi Firefox pour les raisons suivantes :
 * Performances : moteur moderne (Gecko/Quantum) rapide et optimisé pour limiter la consommation mémoire *(n'est-ce pas Chrome !)*.
 * Engagement éthique : soutien de standards web ouverts, lutte contre le monopole des navigateurs dominants.
 
+### Installation
+
+Ne pas installer via le store car flatpack ne permet pas de configurer les politiques de configuration (voir plus bas).
+
+```shell
+sudo apt update
+sudo apt install firefox
+```
+
 ### Configuration
 
-* Désactivation de toutes les télémétries (sauf le ping à Mozilla)
-* TODO lister les configs
+* Page d'accueil Firefox
+  * Désactiver les articles recommandés & sponsorisés
+* Recherche
+  * Sélectionner DuckDuckGo (voir prochain paragraphe pour plus d'infos)
+  * Désactiver les suggestions de recherches
+  * Désactiver les autres moteurs de recherche dans Reccourcis de recherche
+* Vie privée
+  * Désactiver les remplissages automatique (alternative décrite dans le paragraphe des extentions)
+  * Désactivation de toutes les télémétries (sauf le ping à Mozilla)
 
 ### Moteur de recherche
 
@@ -43,43 +59,16 @@ De plus **tout le monde** devrait utiliser un gestionnaire de mot de passe !
 
 ### Configuration avancées
 
-```
-{
-  "policies": {
-    "DisableAboutPreferences": true,
-    "DisableAboutConfig": true,
-    "ExtensionSettings": {
-      "*": {
-        "installation_mode": "blocked"
-      }
-    },
-    "DisablePrivateBrowsing": true,
-    "DisablePocket": true,
-    "DisableTelemetry": true,
-    "DisableDeveloperTools": true,
-    "Preferences": {
-      "xpinstall.signatures.required": {
-        "Value": true,
-        "Status": "locked"
-      },
-      "app.shield.optoutstudies.enabled": {
-        "Value": false,
-        "Status": "locked"
-      },
-      "datareporting.healthreport.uploadEnabled": {
-        "Value": false,
-        "Status": "locked"
-      },
-      "toolkit.telemetry.enabled": {
-        "Value": false,
-        "Status": "locked"
-      }
-    }
-  }
-}
+Une fois tout configuré et afin d'éviter d'eventuelles modifications (malicieuses ou accidentelles) j'ai ajouté une politique stricte afin d'empêcher de nombreuses fonctionnalités.
+
+Jouer les commandes suivantes :
+```shell
+su - admin      # ou le nom de votre compte admin
+cd /usr/lib/firefox/distribution
+sudo nano policies.json
 ```
 
-dans /usr/lib/firefox/distribution/policies.json
+Et mettre le contenu de mon [policies.json](./policies.json).
 
 ## La suite
 

@@ -58,9 +58,9 @@ Je recommande toutefois plusieurs configurations :
 
 *Cela permettra de fortement limité les actions de l'utilisateur et donc d'éviter des bétises (toucher à quelque chose qu'il ne fallait pas des les paramètres avancés) ou des failles de sécurité (installation de logiciels malveillants).*
 * Sur la session de l'utilisateur cible, masquer les raccourcis vers les paramètres dans le menu démarrer
-TODO image
+![Configuration menu principale](./image-config_menu_principale.png "Configuration menu principale")
 * Augmenter la taille de la police et des icones du bureau
-TODO image
+![Configuration taille](./image-config_texte.png "Configuration taille")
 
 ## La suite
 

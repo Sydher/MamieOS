@@ -22,10 +22,11 @@ J'ai donc fait 3 choses :
 
 Ce dernier permet l'étiquettage automatique des mails entrants.  
 Les étiquettes sont les suivantes :
-* TODO lister
+![Etiquettes](./image-etiquettes.png "Etiquettes")
 
 Les filtres sont basés sur les mails envoyeurs (que je sais sûrs et adaptés à sont utilisation) et ajoutent la bonne étiquette sur le mail à la réception.
-TODO screen d'un filtre.
+![Filtres](./image-filtres.png "Filtres")
+![Filtres](./image-filtre.png "Filtres")
 
 Si aucune étiquette n'est ajouté par les autres filtres, un filtre par défaut viens rajouté l'étiquette rouge "Non vérifié" au mail.  
 Cela permet de signaler de faire attention à ce mails (sans qu'il soit forcément frauduleux).
