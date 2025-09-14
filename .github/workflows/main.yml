@@ -3,7 +3,7 @@ name: Build & Release Fake Utils
 on:
   push:
     tags:
-      - 'feature/*'
+      - '*.*.*'
 
 jobs:
   build:
