@@ -24,25 +24,23 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pyinstaller
+          pip install pyinstaller pyqt6
 
       - name: Build executables
         run: |
           cd "4 - Logiciels Divers/fake-utils"
-          pyinstaller --onefile --noconsole fake-antivirus.py
-          pyinstaller --onefile --noconsole fake-cleaner.py
+          pyinstaller --onefile --noconsole --hidden-import=PyQt6 fake-antivirus.py
+          pyinstaller --onefile --noconsole --hidden-import=PyQt6 fake-cleaner.py
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: binaries
-          path: |
-            4 - Logiciels Divers/fake-utils/dist/fake-antivirus
-            4 - Logiciels Divers/fake-utils/dist/fake-cleaner
+          path: 4 - Logiciels Divers/fake-utils/dist/*
 
   release:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Download artifacts
@@ -54,8 +52,6 @@ jobs:
       - name: Create GitHub Release and upload binaries
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            ./artifacts/fake-antivirus
-            ./artifacts/fake-cleaner
+          files: ./artifacts/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
