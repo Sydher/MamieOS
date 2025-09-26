@@ -34,8 +34,8 @@ jobs:
         with:
           name: binaries
           path: |
-            "4 - Logiciels Divers/fake-utils/dist/fake-antivirus"
-            "4 - Logiciels Divers/fake-utils/dist/fake-cleaner"
+            4 - Logiciels Divers/fake-utils/dist/fake-antivirus
+            4 - Logiciels Divers/fake-utils/dist/fake-cleaner
 
   release:
     needs: build
@@ -51,6 +51,8 @@ jobs:
       - name: Create GitHub Release and upload binaries
         uses: softprops/action-gh-release@v2
         with:
-          files: ./artifacts/fake-antivirus, ./artifacts/fake-cleaner
+          files: |
+            ./artifacts/fake-antivirus
+            ./artifacts/fake-cleaner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
